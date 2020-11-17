@@ -1,0 +1,14 @@
+[Unit]
+Description="Creates and mounts local filesystems for local PV provisioner operator"
+Requires=kubelet.service
+After=kubelet.service
+
+[Service]
+Restart=on-failure
+RestartSec=5s
+Environment=MY_HOST_PATH="/mnt/disks/"
+ExecStart="/root/local_fs_provisioner.py"
+ExecStop=/usr/bin/pkill local-fs-provisioner
+
+[Install]
+WantedBy=multi-user.target
