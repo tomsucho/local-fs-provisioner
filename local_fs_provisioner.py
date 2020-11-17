@@ -34,7 +34,7 @@ for event in w.stream(v1.list_persistent_volume_claim_for_all_namespaces):
             and 'kubernetes.io/hostname' in meta.annotations
             and meta.annotations['kubernetes.io/hostname'] == my_node_name):    
 
-            logging.info("New PVC which needs free PV from storage class: %s on my node: %s", spec.storage_class_name, my_node_name)
+            logging.info(f"New PVC which needs free PV from storage class: {spec.storage_class_name} on my node: {my_node_name}")
             logging.info(f"NAMESPACE: {meta.namespace} NAME: {meta.name} STORAGE: {storage}")
 
             vol_name = meta.name
