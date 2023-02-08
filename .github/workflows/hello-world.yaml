@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - 'test-gh-action-branch'
-  pull_requests:
+  pull_request:
 jobs:
   my-job:
     runs-on: busybox
