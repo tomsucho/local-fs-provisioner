@@ -6,7 +6,7 @@ on:
   pull_request:
 jobs:
   my-job:
-    runs-on: busybox
+    runs-on: ubuntu-latest
     steps:
       - name: my-step
         run: echo "Hello World!"
